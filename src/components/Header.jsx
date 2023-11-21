@@ -1,38 +1,43 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <section className='header-menu'>
       <div>
-        <Link
+        {/* <Link
           to='/'
           className='link'
         >
           <div>حـــــاجــــات</div>
           <div>7AGAT</div>
-        </Link>
-        {/* <a
+        </Link> */}
+        <a
           className='link'
           href='/'
         >
           <div>حـــــاجــــات</div>
           <div>7AGAT</div>
-        </a> */}
+        </a>
       </div>
       <div className='header-menu-links'>
-        <Link
+        {/* <Link
           to='/register'
           className='link'
         >
           التسجيل
-        </Link>
-        {/* <a
+        </Link> */}
+        <a
           className='link'
           href='/'
         >
           التسجيل
-        </a> */}
+        </a>
+        {/* <Link
+          to='/about'
+          className='link'
+        >
+          من نحن
+        </Link> */}
         <a
           className='link'
           href='/'

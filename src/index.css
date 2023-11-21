@@ -14,14 +14,11 @@
 *::after {
   margin: 0;
   padding: 0;
+  outline: none;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-size-adjust: none;
   font-family: 'Lemonada', cursive;
-}
-
-*:focus {
-  outline: none;
 }
 
 a,
@@ -57,6 +54,11 @@ html {
   min-height: 100vh;
   width: 100vw;
   background-color: var(--background-main);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.body::-webkit-scrollbar {
+  display: none;
 }
 body {
   -ms-overflow-style: none;
@@ -269,19 +271,17 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-/*  */
+/* REGISTER PAGE  */
 .form-container {
   flex-grow: 1;
-  width: 30vw;
-  min-width: 300px;
+  width: 325px;
   margin: 3rem auto;
   background-color: var(--background-second);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6),
-    2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
 }
 .form-container img {
@@ -295,8 +295,108 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-/*  */
+.register-form {
+  padding: 2rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+.input-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+input {
+  padding: 5px 10px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: var(--border);
+}
+
+label {
+  font-size: 16px;
+  color: var(--border);
+  text-transform: uppercase;
+  order: -1;
+  transform: translateX(-5px) translateY(30px);
+  text-align: right;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+}
+
+input:focus {
+  outline: 2px solid var(--font-main);
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  transform: translateX(-5px) translateY(-8px);
+  color: var(--font-main);
+}
+
+.register-form .main-btn {
+  width: 90%;
+}
+
+.form-toggle-btn {
+  padding-top: 2rem;
+  font-size: 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--font-main);
+}
+
+/* About Page */
+.about-container {
+  font-size: 16px;
+  line-height: 2.4rem;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.about-text {
+  text-align: right;
+}
+.team-list h3 {
+  padding-bottom: 1rem;
+}
+.team-list ul {
+  list-style-type: none;
+}
+.team-list li {
+  padding: 1rem 0;
+}
+
+/* Basic Units */
+.basic-unit {
+  padding: 3rem 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.basic-unit:nth-child(odd) {
+  background-color: var(--background-second);
+}
+.basic-unit h3 {
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.basic-unit .input-field {
+  width: 300px;
+}
+
+/* FOOTER */
 footer {
   background-color: var(--background-second);
   flex-shrink: 0;
@@ -304,6 +404,7 @@ footer {
   text-align: center;
   padding: 5rem 3rem;
   border-top: 1px solid var(--font-main);
+  margin-bottom: 0;
 }
 .footer-title {
   font-size: 3rem;
@@ -313,4 +414,5 @@ footer {
   margin-top: 2rem;
   font-size: 16px;
   text-align: center;
+  line-height: 2rem;
 }

@@ -4,6 +4,13 @@ import form from '../assets/images/form.png'
 const Register = () => {
   const [formState, setFormState] = useState('login')
 
+  const handleLogin = (e) => {
+    e.preventDefault()
+  }
+  const handleRegister = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <div className='form-container'>
       <img
@@ -13,9 +20,100 @@ const Register = () => {
       <h3 className='form-title'>أهلًا بك في حاجات</h3>
       <p className='footer-text'>نتمنى لك تجربة ممتعة</p>
       {formState === 'login' ? (
-        <div>Login</div>
+        <form
+          onSubmit={handleLogin}
+          className='register-form'
+        >
+          <div className='input-field'>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              autoComplete='off'
+              placeholder=' '
+            />
+            <label htmlFor='email'>البريد الإلكتروني</label>
+          </div>
+          <div className='input-field'>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              placeholder=' '
+            />
+            <label htmlFor='password'>كلمة المرور</label>
+          </div>
+          <button
+            type='submit'
+            className='main-btn'
+          >
+            تسجيل الدخول
+          </button>
+          <button
+            className='form-toggle-btn'
+            onClick={() => setFormState('register')}
+          >
+            ليس لديك حساب؟
+          </button>
+        </form>
       ) : (
-        <div>Register</div>
+        <form
+          onSubmit={handleRegister}
+          className='register-form'
+        >
+          <div className='input-field'>
+            <input
+              type='username'
+              name='username'
+              id='username'
+              autoComplete='off'
+              placeholder=' '
+            />
+            <label htmlFor='username'>اسم المستخدم</label>
+          </div>
+          <div className='input-field'>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              autoComplete='off'
+              placeholder=' '
+            />
+            <label htmlFor='email'>البريد الإلكتروني</label>
+          </div>
+          <div className='input-field'>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              placeholder=' '
+            />
+            <label htmlFor='password'>كلمة المرور</label>
+          </div>
+          <div className='input-field'>
+            <input
+              type='password'
+              name='password2'
+              id='password2'
+              placeholder=' '
+            />
+            <label htmlFor='password2'>
+              تأكيد كلمة المرور
+            </label>
+          </div>
+          <button
+            type='submit'
+            className='main-btn'
+          >
+            تسجيل الدخول
+          </button>
+          <button
+            className='form-toggle-btn'
+            onClick={() => setFormState('login')}
+          >
+            لديك حساب بالفعل؟
+          </button>
+        </form>
       )}
     </div>
   )

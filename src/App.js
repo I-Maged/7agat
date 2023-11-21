@@ -7,6 +7,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Homepage from './pages/Homepage'
 import Register from './pages/Register'
+import About from './pages/About'
+import BasicUnits from './pages/BasicUnits'
 
 const App = () => {
   return (
@@ -21,6 +23,14 @@ const App = () => {
           <Route
             path='/register'
             element={<Register />}
+          />
+          <Route
+            path='/about'
+            element={<About />}
+          />
+          <Route
+            path='/basic'
+            element={<BasicUnits />}
           />
         </Routes>
         <Footer />

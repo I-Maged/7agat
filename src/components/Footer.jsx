@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer>
-      <a
+      <Link
+        to='/basic'
         className='link'
-        href='/'
       >
         <h3 className='footer-title'>Basic Units</h3>
-      </a>
+      </Link>
       <p className='footer-text'>
         Copyright &copy; {currentYear} by 7AGAT, LLC. All
         rights reserved.
